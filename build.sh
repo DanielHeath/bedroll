@@ -11,4 +11,6 @@ git add -A .
 git commit -m "Build"
 git push origin master
 cd ..
+rm -rf output2/.git
+mv output/.git output2/
 
