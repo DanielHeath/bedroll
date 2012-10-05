@@ -1,15 +1,10 @@
 @app =
-  initialize: (module) ->
-    @module = module
+  initialize: (@page) ->
     @bind()
 
   bind: ->
-    document.addEventListener "deviceready", @deviceready, false
+    th = @
+    document.addEventListener "deviceready", (-> th.deviceready()), false
 
   deviceready: ->
-    app.report "deviceready"
-
-  report: (id) ->
-    $.getJSON("https://danielh.tent.is/tent/posts").then (posts) ->
-      for post in posts
-        $("#posts").append $("<p class='status'></p>").text(post.content.text)
+    pages[@page].activate() if pages[@page]
