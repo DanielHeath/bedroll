@@ -1,13 +1,16 @@
 <nav id="navigation">
   <ol>
-  {% for item in navigation %}
-    <p>{{item.current}}</p>
     <li>
-    <a href="#{{item.permalink}}index.html"
-       class="navlink {{item.module}}"
-       data-module="{{item.module}}" >
-      {{item.name}}
+    <a href="#account.html"
+       class="navlink account"
+       data-module="account" >
+      Account
     </a></li>
-  {% endfor %}
+    <li>
+    <a href="#feed.html"
+       class="navlink feed"
+       data-module="feed" >
+      Feed
+    </a></li>
   </ol>
 </nav>

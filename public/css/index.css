@@ -68,3 +68,6 @@ body {
   list-style-type: none;
   height: 30px;
   width: 24%; }
+
+#loading {
+  display: none; }

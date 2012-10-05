@@ -5,6 +5,7 @@ class Feed
     $("#loading").show()
     $.getJSON(models.account.feedUrl()).then (posts) ->
       $("#loading").hide()
+      $("#posts").empty()
       for post in posts when post.content.text
         $("#posts").append $("<p class='status'></p>").text(post.content.text)
 

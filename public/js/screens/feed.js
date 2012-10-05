@@ -12,6 +12,7 @@
       return $.getJSON(models.account.feedUrl()).then(function(posts) {
         var post, _i, _len, _results;
         $("#loading").hide();
+        $("#posts").empty();
         _results = [];
         for (_i = 0, _len = posts.length; _i < _len; _i++) {
           post = posts[_i];

@@ -18,4 +18,3 @@
     $('#navigation .navlink').click ->
       module = $(@).attr('data-module')
       th.selectPage(module)
-
