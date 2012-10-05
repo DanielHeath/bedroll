@@ -3,7 +3,8 @@
   this.app = {
     initialize: function(page) {
       this.page = page;
-      return this.bind();
+      this.bind();
+      return this.selectPage('');
     },
     bind: function() {
       var th;
@@ -12,10 +13,21 @@
         return th.deviceready();
       }), false);
     },
+    selectPage: function(module) {
+      var _ref;
+      $(".module").hide();
+      $("#" + module).show();
+      return (_ref = pages[module]) != null ? _ref.activate() : void 0;
+    },
     deviceready: function() {
-      if (pages[this.page]) {
-        return pages[this.page].activate();
-      }
+      var th;
+      th = this;
+      this.selectPage('feed');
+      return $('#navigation .navlink').click(function() {
+        var module;
+        module = $(this).attr('data-module');
+        return th.selectPage(module);
+      });
     }
   };
 

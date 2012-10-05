@@ -3,7 +3,17 @@
   {% include "shared/head" %}
   <body id="{{slug}}">
     {% include "shared/header" %}
-    <div id="posts">
+
+    <div id="feed" class="module">
+      <div id="posts">
+      </div>
     </div>
+
+    <div id="account" class="module">
+        <label>Name: </label>
+        <input name="name"></input>
+        <input name="submit" type="submit" value="Update"></input>
+    </div>
+
   </body>
 </html>

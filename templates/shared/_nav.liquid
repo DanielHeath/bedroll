@@ -1,9 +1,13 @@
 <nav id="navigation">
   <ol>
-  <li><a href="#/" class="index">Home</a></li>
   {% for item in navigation %}
     <p>{{item.current}}</p>
-    <li><a href="#{{item.permalink}}index.html" class="{{item.module}}">{{item.name}}</a></li>
+    <li>
+    <a href="#{{item.permalink}}index.html"
+       class="navlink {{item.module}}"
+       data-module="{{item.module}}" >
+      {{item.name}}
+    </a></li>
   {% endfor %}
   </ol>
 </nav>
