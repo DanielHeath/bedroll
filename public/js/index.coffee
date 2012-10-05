@@ -1,5 +1,6 @@
 @app =
-  initialize: ->
+  initialize: (module) ->
+    @module = module
     @bind()
 
   bind: ->
@@ -11,4 +12,4 @@
   report: (id) ->
     $.getJSON("https://danielh.tent.is/tent/posts").then (posts) ->
       for post in posts
-        $("#posts").append $("<p></p>").text(post.content.text)
+        $("#posts").append $("<p class='status'></p>").text(post.content.text)

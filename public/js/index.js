@@ -1,7 +1,8 @@
 (function() {
 
   this.app = {
-    initialize: function() {
+    initialize: function(module) {
+      this.module = module;
       return this.bind();
     },
     bind: function() {
@@ -16,7 +17,7 @@
         _results = [];
         for (_i = 0, _len = posts.length; _i < _len; _i++) {
           post = posts[_i];
-          _results.push($("#posts").append($("<p></p>").text(post.content.text)));
+          _results.push($("#posts").append($("<p class='status'></p>").text(post.content.text)));
         }
         return _results;
       });
