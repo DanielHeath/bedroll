@@ -13,4 +13,6 @@ git push origin master
 cd ..
 rm -rf output2/.git
 mv output/.git output2/
+rm -rf output/*
+rm -rf output2/*
 
